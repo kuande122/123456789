@@ -168,10 +168,7 @@ row1_spacer1, row1_1, row1_spacer2, row1_2, row1_spacer3 = st.beta_columns(
 
 row1_1.title('NFL Receiver Dashboard')
 
-with row1_2:
-    st.write('')
-    row1_2.subheader(
-    'A Web App by [Max Bolger](https://twitter.com/mnpykings)')
+
 
 # ROW 2 ------------------------------------------------------------------------
 
