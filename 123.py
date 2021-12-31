@@ -166,7 +166,7 @@ row1_spacer1, row1_1, row1_spacer2, row1_2, row1_spacer3 = st.beta_columns(
     (.1, 2, 1.5, 1, .1)
     )
 
-row1_1.title('NFL Receiver Dashboard')
+row1_1.title('CPBL Receiver Dashboard')
 
 
 
