@@ -197,7 +197,7 @@ with row2_1:
                 ['full_name','pbp_name','team']
                     ).dropna().reset_index(drop=True).sort_values('full_name')
     records = pd_filt.to_dict('records')
-    selected_data = st.selectbox('Select a Player', options=records,
+    selected_data = st.selectbox('選擇球隊', options=records,
         format_func=lambda record: f'{record["full_name"]}')
 
     player = selected_data.get('pbp_name')
