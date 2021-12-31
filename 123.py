@@ -17,7 +17,7 @@ _lock = RendererAgg.lock
 plt.style.use('default')
 
 # SETUP ------------------------------------------------------------------------
-st.set_page_config(page_title='Wide Receiver Dashboard',
+st.set_page_config(page_title=' CPBL Receiver ',
                    page_icon='https://pbs.twimg.com/profile_images/'\
                              '1265092923588259841/LdwH0Ex1_400x400.jpg',
                    layout="wide")
