@@ -208,8 +208,8 @@ with row2_1:
 with row2_2:
     start_week, stop_week = st.select_slider(
     '選取一個期間年份為單位',
-    options=list(range(1990,2021)),
-    value=(1,32))
+    options=list(range(1,21)),
+    value=(1,21))
 
 # ROW 1 ------------------------------------------------------------------------
 
