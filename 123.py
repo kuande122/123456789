@@ -435,44 +435,6 @@ with row3_1, _lock:
     st.subheader('PPR Points by Week')
     fpts_chart(player, team)
 
-def epa_chart(player, team):
-    '''
-    This function returns epa chart
-    '''
-
-    week_filter = df.loc[(df.week>= start_week) & (df.week<= stop_week) &
-                         (df.receiver.isin(player_list))]
-    epa = week_filter.groupby(['receiver','posteam']).agg(
-            {'success':'mean','epa':'mean','play_id':'count'}
-            ).reset_index()
-    #error handling similar names due to id issues
-    epa = epa.loc[~((epa['receiver'] == 'I.Smith') & (epa['posteam'] == 'ATL')) &
-                  ~((epa['receiver'] == 'M.Brown') & (epa['posteam'] == 'LAR')) &
-                  ~((epa['receiver'] == 'D.Johnson') & (epa['posteam'] == 'HOU'))]
-
-    tgt_filt = stop_week - start_week
-    epa = epa.loc[epa.play_id>tgt_filt]
-    epa['color'] = '#EFEFEF'
-    epa.loc[(epa.receiver==player) & (epa.posteam==team),'color'] = COLORS.get(team)
-    epa = epa.sort_values(by='color',ascending=False)
-    fig5 = Figure()
-    ax = fig5.subplots()
-
-    sns.scatterplot(x=epa.success, y=epa.epa,data=epa,
-    color=epa.color,s=(epa.play_id * 2),ax=ax)
-
-    ax.axhline(y=epa.epa.mean(),linestyle='--',color='black',alpha=0.2)
-    ax.axvline(x=epa.success.mean(),linestyle='--',color='black',alpha=0.2)
-    # ax.get_legend().remove()
-    ax.set_xlabel('Success Rate', fontsize=12)
-    ax.set_ylabel('EPA/Target', fontsize=12)
-    ax.grid(zorder=0,alpha=.2)
-    ax.set_axisbelow(True)
-    st.pyplot(fig5)
-
-with row3_2, _lock:
-    st.subheader('EPA/Target')
-    epa_chart(player, team)
 
 def catch_rate(player,team):
 
