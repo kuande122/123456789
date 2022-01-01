@@ -222,7 +222,7 @@ with row1_1, _lock:
     player_filter = player_data.loc[(player_data['pbp_name'] == player) &
                                     (player_data['team'] == team)]
     url = player_filter['headshot_url'].dropna().iloc[-1]
-    st.subheader('Player Info')
+    st.subheader('球隊資訊')
     st.image(url, width=300)
 
 
