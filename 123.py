@@ -356,48 +356,7 @@ with row2_2, _lock:
     st.subheader('Air Yards Binned')
     ay_bins(player,team)
 
-def ay_tgt(player, team):
-    '''
-    This function returns binned ay counts
-    '''
 
-    week_filter = df.loc[(df.week>= start_week) & (df.week<= stop_week) &
-                         (df.receiver.isin(player_list))]
-
-    ay_tgt = week_filter.groupby(['receiver','posteam']).agg(
-                {'air_yards':'sum','play_id':'count'}
-                ).reset_index().sort_values(
-                    by=['air_yards'],ascending=False
-                    ).reset_index(drop=True)
-    tgt_filt = stop_week - start_week
-
-    ay_tgt = ay_tgt.loc[ay_tgt.play_id>tgt_filt]
-    fig3 = Figure()
-    ax = fig3.subplots()
-
-    sns.scatterplot(x=ay_tgt.play_id, y=ay_tgt.air_yards,data=ay_tgt,
-    color='#E8E8E8',ax=ax)
-
-    sns.scatterplot(x=ay_tgt[(ay_tgt.receiver==player) &
-                             (ay_tgt.posteam==team)].play_id,
-                             y=ay_tgt.air_yards,data=ay_tgt,
-                             color=COLORS.get(team),s=100,
-                             legend=False, ax=ax)
-
-    x = ay_tgt.play_id
-    y = ay_tgt.air_yards
-    m, b = np.polyfit(x, y, 1)
-    ax.plot(x, m*x + b, 'k',alpha=.2,linestyle='-')
-
-    ax.set_xlabel('Targets', fontsize=12)
-    ax.set_ylabel('Air Yards', fontsize=12)
-    ax.grid(zorder=0,alpha=.2)
-    ax.set_axisbelow(True)
-    st.pyplot(fig3)
-
-with row2_3, _lock:
-    st.subheader('Air Yards as a Function of Targets')
-    ay_tgt(player,team)
 
 # ROW 3 ------------------------------------------------------------------------
 st.write('')
