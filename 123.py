@@ -4,7 +4,8 @@ import streamlit as st
 confirm_input = st.button('確認產生答案')
 if "start" not in st.session_state:
   st.session_state.start = 1
-
+if "end" not in st.session_state:
+  st.session_state.end = 100
 if confirm_input:
  st.session_state.c = c = random.randint(2,99)
  st.session_state.start = 1
