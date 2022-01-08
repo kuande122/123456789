@@ -1,26 +1,34 @@
+import random
 import streamlit as st
-import pandas as pd               # 資料處理套件
-import matplotlib.pyplot as plt   # 資料視覺化套件
-import altair as alt
-import numpy as np
-from PIL import Image
-option = st.sidebar.selectbox( '選擇球隊？', ['中信兄弟', '統一7-Eleven獅', '味全龍', '樂天桃猿','富邦悍將'])
-if option == '中信兄弟':
-  image = Image.open('brothers.png')
-  st.image(image)
-elif option == '統一7-Eleven獅':
-  image = Image.open('unilion.png')
-  st.image(image)
-elif option == '味全龍':
-  image = Image.open('Dragons.png')
-  st.image(image)
-elif option == '樂天桃猿':
-  image = Image.open('Rakuten.png')
-  st.image(image)
-elif option == '富邦悍將':
-  image = Image.open('guardians.png')
-  st.image(image)
-df = pd.read_excel("wang.xlsx")
-st.write(df)
+confirm_input = st.button('確認產生答案')
+if confirm_input:
+  st.session_state.c = c = random.randint(2,99)
+  st.session_state.start = 1
+  st.session_state.end = 100
+  st.session_state.start,st.session_state.end = 1,100
+  st.write('c=', st.session_state.c)
+
+
+
+
+
+  x=st.number_input("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end))
+  #st.write("「輸入確認」鍵記得按兩次喔,否則可能導致程式無法正常運行!")
+  confirm_input2 = st.button('輸入確認')
+  if confirm_input2:
+    if x==st.session_state.c:
+      st.write("恭喜你中獎了")
+  elif x>st.session_state.c:
+    if x>=st.session_state.end:
+      st.write("輸入不合法,請重新輸入:")
+    else:
+      st.session_state.end=x
+else:
+  if x<=st.session_state.start:
+    st.write("輸入不合法,請重新輸入:")
+  else:
+    st.session_state.start=x
+
+
 
 
