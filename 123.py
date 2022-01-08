@@ -19,19 +19,15 @@ st.write("「輸入確認」鍵記得按兩次喔,否則可能導致程式無法
  
 
 
-if st.button('輸入確認'):
-  if x==st.session_state.c: #輸入=答案
-    st.write("恭喜你中獎了")   #中獎
-  if x>st.session_state.c:
-    if x>=st.session_state.end:
-      st.write("輸入不合法,請重新輸入:")
-    else:
-      st.session_state.end=x
-  if x<st.session_state.c:
-    if x<=st.session_state.start:
-      st.write("輸入不合法,請重新輸入:")
-    else:
-      st.session_state.start=x
+while st.button('輸入確認'):
+    if x==st.session_state.c:
+      st.write("恭喜你中獎了")   
+    elif x!=st.session_state.c:
+        if x>=st.session_state.end x<=st.session_state.start:
+            st.write("輸入不合法,請重新輸入:")
+        else:
+            st.session_state.start=x
+    break
 
 
 
