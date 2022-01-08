@@ -22,17 +22,18 @@ if st.button('輸入確認'):
   if x==st.session_state.c: #如果輸入=答案
     st.write("恭喜你中獎了")   #中獎
   if x>st.session_state.c:  
-    st.session_state.end=x#如果輸入大於答案
-    if x>=st.session_state.end: #輸入大等於終值
-      st.write("輸入不合法,請重新輸入:") #輸入不合法
- # if x<st.session_state.end  and x>st.session_state.c:                   #否則
-           #終值=輸入
+    #如果輸入大於答案
+    st.session_state.end=x
+     #if x>=st.session_state.end: #輸入小等於初值
+      #st.write("輸入不合法,請重新輸入:") #輸入不合法
+    #else:        #否則
+      st.session_state.end=x  #終值=輸入
   if x<st.session_state.c: 
-    st.session_state.start=x #初值=輸入#如果輸入小於答案
-    if x<=st.session_state.start: #輸入小等於初值
-      st.write("輸入不合法,請重新輸入:") #輸入不合法
-  #if x>st.session_state.end  and x<st.session_state.c:                                #否則
-      
+    #初值=輸入#如果輸入小於答案
+    #if x<=st.session_state.start: #輸入小等於初值
+      #st.write("輸入不合法,請重新輸入:") #輸入不合法
+    #else                         #否則
+      st.session_state.start=x 
    
                             
      
