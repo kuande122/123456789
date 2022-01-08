@@ -1,6 +1,6 @@
 import random
 import streamlit as st
-st title('猛祺不是帥哥')
+sttitle('猛祺不是帥哥')
 confirm_input = st.button('確認產生答案')
 if "start" not in st.session_state:
   st.session_state.start = 1
