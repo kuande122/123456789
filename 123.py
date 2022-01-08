@@ -5,7 +5,7 @@ if "start" not in st.session_state:
   st.session_state.start = 1
 if "end" not in st.session_state:
   st.session_state.end = 100
-if "" not in st.session_state:
+if "c" not in st.session_state:
   st.session_state.c = random.randint(2,99) 
 if confirm_input:
  st.session_state.c = c = random.randint(2,99)
