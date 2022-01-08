@@ -8,7 +8,8 @@ if confirm_input:
  st.session_state.end = 100
  st.session_state.start,st.session_state.end = 1,100
  #st.write('c=', st.session_state.c)
- 
+ if "start" not in sessionstate:
+  st.session_state.start = 1
 
 x=st.number_input("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end)) 
 #st.write("「輸入確認」鍵記得按兩次喔,否則可能導致程式無法正常運行!") 
