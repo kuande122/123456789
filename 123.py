@@ -7,8 +7,7 @@ if "end" not in st.session_state:
   st.session_state.end = 100
 if "c" not in st.session_state:
   st.session_state.c = random.randint(2,99) 
-if "輸入確認" not in st.session_state:
-  st.session_state.輸入確認 = True
+
 if confirm_input:
  st.session_state.c = c = random.randint(2,99)
  st.session_state.start = 1
@@ -19,14 +18,18 @@ if confirm_input:
 x=st.number_input("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end)) 
 st.write("「輸入確認」鍵記得按兩次喔,否則可能導致程式無法正常運行!") 
 
-while st.button('輸入確認') :
-  if x==st.session_state.c: 
-    st.write("恭喜你中獎了")  
-  continue
-  if x>st.session_state.c: 
-    st.session_state.end=x
-  if x<st.session_state.c: 
-    st.session_state.start=x #初值=輸入
+if st.button('輸入確認'):
+    st.write(x==st.session_state.c)
+    if x==st.session_state.c:
+      st.write("恭喜你中獎了")   
+    elif x!=st.session_state.c:
+        if x>=st.session_state.end or x<=st.session_state.start:
+            st.write("輸入不合法,請重新輸入:")
+        else:
+            if x>st.session_state.c:
+                st.session_state.end=x
+            elif x<st.session_state.c:
+                st.session_state.start=x
    
                             
      
