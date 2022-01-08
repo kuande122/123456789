@@ -23,7 +23,7 @@ while st.button('輸入確認'):
     if x==st.session_state.c:
       st.write("恭喜你中獎了")   
     else :
-        if x>=st.session_state.end|x<=st.session_state.start:
+        if x>=st.session_state.end or x<=st.session_state.start:
             st.write("輸入不合法,請重新輸入:")
         else:
             st.session_state.start=x
