@@ -2,7 +2,7 @@ __author__="teacher"
 import random
 import streamlit as st
 confirm_input = st.button('確認產生答案')
-confirm_input2 = st.button('輸入確認')
+
 if "start" not in st.session_state:
   st.session_state.start = 1
 if "end" not in st.session_state:
@@ -18,6 +18,8 @@ if confirm_input:
   st.session_state.start,st.session_state.end = 1,100
   st.write('c=', st.session_state.c)
 
+  
+confirm_input2 = st.button('輸入確認')
 
 
 
