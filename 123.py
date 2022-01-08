@@ -33,7 +33,7 @@ if st.button('輸入確認'):
     #if x<=st.session_state.start: #輸入小等於初值
       #st.write("輸入不合法,請重新輸入:") #輸入不合法
     #else                         #否則
-      st.session_state.start=x 
+    st.session_state.start=x 
    
                             
      
