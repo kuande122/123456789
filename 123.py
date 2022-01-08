@@ -1,3 +1,4 @@
+__author__="teacher"
 import random
 import streamlit as st
 confirm_input = st.button('確認產生答案')
