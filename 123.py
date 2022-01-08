@@ -29,4 +29,4 @@ if st.button('輸入確認'):
                 st.session_state.end=x
             elif x<st.session_state.c:
                 st.session_state.start=x
-        break
+    break
