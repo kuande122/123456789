@@ -7,7 +7,7 @@ st.set_page_config(
  page_icon='🙈')
 st.title('猛祺🙈的💣定時核彈🧨,炸到你心坎裡')
 confirm_input = st.button('開始製造💣')
-confirm_input1 = st.button('重新製造💣')
+
 if "start" not in st.session_state:
  st.session_state.start = 1
 if "end" not in st.session_state:
@@ -24,7 +24,7 @@ if confirm_input:
  st.session_state.start,st.session_state.end = 1,100
  st.session_state.begin= 'y'
  x=0
-
+ x=st.number_input("請輸入整數?", value=0)
 
 
 
