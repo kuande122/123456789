@@ -38,6 +38,7 @@ x=st.number_input("請輸入整數?", value=0)
  
 if x>st.session_state.c:
  if x>=st.session_state.end:
+     x=0
     pass
  else:
    st.session_state.end=x
