@@ -23,8 +23,8 @@ if confirm_input:
  st.session_state.end = 100
  st.session_state.start,st.session_state.end = 1,100
  st.session_state.begin= 'y'
- x=0
- x=st.number_input("請輸入整數?", value=0)
+ #x=0
+ x=st.number_input("請輸入整數?", 0)
 
 
 
@@ -32,7 +32,7 @@ if confirm_input:
 st.write('c=', st.session_state.c)
 
 #x=st.sidebar.text_input("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end)) 
-x=st.number_input("請輸入整數?", value=0)
+#x=st.number_input("請輸入整數?", value=0)
 
  
 if x>st.session_state.c:
