@@ -32,6 +32,7 @@ st.write('c=', st.session_state.c)
 #x=st.sidebar.text_input("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end)) 
 x=st.number_input("請輸入整數?", 0)
 if confirm_input1:
+ st.session_state.c = c = random.randint(2,99)
  st.session_state.start = 1
  st.session_state.end = 100
  st.session_state.start,st.session_state.end = 1,100
