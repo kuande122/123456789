@@ -7,6 +7,7 @@ st.set_page_config(
  page_icon='🙈')
 st.title('猛祺🙈的💣定時核彈🧨,炸到你心坎裡')
 confirm_input = st.button('開始製造💣')
+confirm_input1 = st.button('重新製造💣')
 if "start" not in st.session_state:
  st.session_state.start = 1
 if "end" not in st.session_state:
@@ -23,7 +24,13 @@ if confirm_input:
  st.session_state.start,st.session_state.end = 1,100
  st.session_state.begin= 'y'
  x=0
-
+if confirm_input1:
+ st.session_state.c = c = random.randint(2,99)
+ st.session_state.start = 1
+ st.session_state.end = 100
+ #st.session_state.start,st.session_state.end = 1,100
+ #st.session_state.begin= 'y'
+ #x=0
 
 
 st.write('c=', st.session_state.c)
