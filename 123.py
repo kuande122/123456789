@@ -62,7 +62,7 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  f'<img src="data:image/gif;base64,{data_url}" alt="output_ntyylX gif">',
  unsafe_allow_html=True,
  )
- x=0
+ st.number_input=0
 
 if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
  if x>st.session_state.end:
