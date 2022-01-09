@@ -58,7 +58,7 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  st.markdown(
  f'<img src="data:image/gif;base64,{data_url}" alt="output_ntyylX gif">',
  unsafe_allow_html=True,
- x=st.number_input("請輸入整數?", 0)
+ st.session_state.start,st.session_state.end = 1,100
  )
 
 if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
@@ -70,7 +70,7 @@ if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
     file_.close()
     st.markdown(
     f'<img src="data:image/gif;base64,{data_url}" alt="1 gif">',
-    unsafe_allow_html=True,
+    unsafe_allow_html=True,   
     )
  else:
    st.session_state.end=x
