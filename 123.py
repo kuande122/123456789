@@ -7,6 +7,7 @@ st.set_page_config(
  page_icon='🙈')
 st.title('猛祺🙈的💣定時核彈🧨,炸到你心坎裡')
 confirm_input = st.button('開始製造💣/重新製造💣')
+confirm_input1 = st.button('重新製造💣')
 if "start" not in st.session_state:
  st.session_state.start = 1
 if "end" not in st.session_state:
@@ -23,6 +24,10 @@ if confirm_input:
  st.session_state.start,st.session_state.end = 1,100
  st.session_state.begin= 'y'
  x=0
+ if confirm_input1:
+  st.session_state.start = 1
+  st.session_state.end = 100
+
 
 st.write('c=', st.session_state.c)
 
@@ -58,7 +63,7 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  )
 
 if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
- if x>=st.session_state.end:
+ if x>st.session_state.end:
     st.write("不合法啦,好好選新的數字:")
     file_ = open("1.gif", "rb")
     contents = file_.read()
@@ -72,7 +77,7 @@ if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
    st.session_state.end=x
      
 if x<st.session_state.c and st.session_state.begin == 'y' and x>0:
-    if x<=st.session_state.start:
+    if x<st.session_state.start:
        st.write("不合法啦,好好選新的數字:")
        file_ = open("1.gif", "rb")
        contents = file_.read()
