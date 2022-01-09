@@ -24,13 +24,9 @@ if confirm_input:
  st.session_state.start,st.session_state.end = 1,100
  st.session_state.begin= 'y'
  x=0
-if confirm_input1:
- st.session_state.c = c = random.randint(2,99)
- st.session_state.start = 1
- st.session_state.end = 100
- st.session_state.start,st.session_state.end = 1,100
- st.session_state.begin= 'y'
- x=0
+
+
+
 
 
 st.write('c=', st.session_state.c)
@@ -65,7 +61,8 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  st.markdown(
  f'<img src="data:image/gif;base64,{data_url}" alt="output_ntyylX gif">',
  unsafe_allow_html=True,
- 
+ $ pip install --upgrade streamlit
+ $ streamlit hello
  )
 
 if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
