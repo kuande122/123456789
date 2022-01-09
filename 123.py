@@ -28,9 +28,9 @@ if confirm_input1:
  st.session_state.c = c = random.randint(2,99)
  st.session_state.start = 1
  st.session_state.end = 100
- #st.session_state.start,st.session_state.end = 1,100
- #st.session_state.begin= 'y'
- #x=0
+ st.session_state.start,st.session_state.end = 1,100
+ st.session_state.begin= 'y'
+ x=0
 
 
 st.write('c=', st.session_state.c)
