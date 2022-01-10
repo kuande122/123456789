@@ -20,7 +20,7 @@ if "begin" not in st.session_state:
 if "x" not in st.session_state:
  st.session_state.x= 0
 if confirm_input:
- c
+ st.session_state.x= 0
  st.session_state.c = c = random.randint(2,99)
  st.session_state.start = 1
  st.session_state.end = 100
