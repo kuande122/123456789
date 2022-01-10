@@ -66,7 +66,7 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  unsafe_allow_html=True,
  )
 
-if x>st.session_state.c and st.session_state.begin == 'y' and st.session_state.x= 0:
+if x>st.session_state.c and st.session_state.begin == 'y' and st.session_state.x=0:
  if x>st.session_state.end:
     st.write("不合法啦,好好選新的數字:")
     file_ = open("1.gif", "rb")
