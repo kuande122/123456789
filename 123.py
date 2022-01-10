@@ -17,8 +17,10 @@ if "c" not in st.session_state:
 if "begin" not in st.session_state:
  st.session_state.begin= 'n'
  
+if "x" not in st.session_state:
+ st.session_state.x= 0
 if confirm_input:
- x=0
+ c
  st.session_state.c = c = random.randint(2,99)
  st.session_state.start = 1
  st.session_state.end = 100
@@ -38,16 +40,15 @@ x=st.number_input("請輸入整數?", value=0)
  
 if x>st.session_state.c:
  if x>=st.session_state.end:
-    x=0
     pass
  else:
-   st.session_state.end=x
+   st.session_state.end=st.session_state.x
 
 if x<st.session_state.c:
     if x<=st.session_state.start:
        pass
     else:
-       st.session_state.start=x
+       st.session_state.start=st.session_state.x
 
 st.write("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end)) 
 
@@ -65,7 +66,7 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  unsafe_allow_html=True,
  )
 
-if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
+if x>st.session_state.c and st.session_state.begin == 'y' and st.session_state.x= 0:
  if x>st.session_state.end:
     st.write("不合法啦,好好選新的數字:")
     file_ = open("1.gif", "rb")
@@ -77,9 +78,9 @@ if x>st.session_state.c and st.session_state.begin == 'y' and x>0:
     unsafe_allow_html=True,   
     )
  else:
-   st.session_state.end=x
+   st.session_state.end=st.session_state.x
      
-if x<st.session_state.c and st.session_state.begin == 'y' and x>0:
+if x<st.session_state.c and st.session_state.begin == 'y' and st.session_state.x=0:
     if x<st.session_state.start:
        st.write("不合法啦,好好選新的數字:")
        file_ = open("1.gif", "rb")
@@ -91,4 +92,4 @@ if x<st.session_state.c and st.session_state.begin == 'y' and x>0:
        unsafe_allow_html=True,
        )
     else:
-       st.session_state.start=x
+       st.session_state.start=st.session_state.x
