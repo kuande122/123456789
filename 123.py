@@ -64,6 +64,8 @@ if x==st.session_state.c and st.session_state.begin == 'y':
  st.markdown(
  f'<img src="data:image/gif;base64,{data_url}" alt="output_ntyylX gif">',
  unsafe_allow_html=True,
+ st.session_state.end=100
+ st.session_state.start=1
  )
 
 if x>st.session_state.c and st.session_state.begin == 'y' and st.session_state.x:
