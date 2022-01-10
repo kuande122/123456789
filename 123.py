@@ -26,7 +26,7 @@ if confirm_input:
  st.session_state.end = 100
  st.session_state.start,st.session_state.end = 1,100
  st.session_state.begin= 'y'
- 
+ x=0
 
 
 
@@ -78,7 +78,7 @@ if x>st.session_state.c and st.session_state.begin == 'y' and st.session_state.x
     unsafe_allow_html=True,   
     )
  else:
-   st.session_state.end=st.session_state.x
+   st.session_state.end=x
      
 if x<st.session_state.c and st.session_state.begin == 'y' and st.session_state.x:
     if x<st.session_state.start:
@@ -92,4 +92,4 @@ if x<st.session_state.c and st.session_state.begin == 'y' and st.session_state.x
        unsafe_allow_html=True,
        )
     else:
-       st.session_state.start=st.session_state.x
+       st.session_state.start=x
