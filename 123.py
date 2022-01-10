@@ -48,7 +48,7 @@ if x<st.session_state.c:
     if x<=st.session_state.start:
        pass
     else:
-       st.session_state.start=st.session_state.x
+       st.session_state.start=x
 
 st.write("請輸入%g到%g之間的整數:"%(st.session_state.start,st.session_state.end)) 
 
